@@ -1,4 +1,4 @@
-![Alt](https://prod-edx-edxapp-assets.edx-cdn.org/static/edx.org/images/logo.790c9a5340cb.png)
+![](https://prod-edx-edxapp-assets.edx-cdn.org/static/edx.org/images/logo.790c9a5340cb.png)
 
 # HarvardX's Data Science Professional Certificate
 
