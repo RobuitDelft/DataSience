@@ -1,3 +1,5 @@
+library(dslabs)
+data("gapminder")
 # add dollars per day variable and define past year
 gapminder <- gapminder %>%
   mutate(dollars_per_day = gdp/population/365)
@@ -47,3 +49,4 @@ p + geom_boxplot(aes(region, dollars_per_day, fill = continent)) +
 
 # arrange matching boxplots next to each other, colored by year
 p + geom_boxplot(aes(region, dollars_per_day, fill = factor(year)))
+

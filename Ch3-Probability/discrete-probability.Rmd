@@ -1,0 +1,56 @@
+---
+title: "Discrete Probability"
+author: "Rob van Laaroven"
+date: "3-3-2020"
+output: word_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Monte Carlo simulations
+
+Monte Carlo simulations model the probability of different outcomes by repeating a random process a large enough number of times that the results are similar to what would be observed if the process were repeated forever.
+
+The sample() function draws random outcomes from a set of options.
+
+The replicate() function repeats lines of code a set number of times. It is used with sample() and similar functions to run Monte Carlo simulations.
+
+```{r beads}
+beads <- rep(c("red", "blue"), times = c(2,3))    # create an urn with 2 red, 3 blue
+beads    # view beads object
+sample(beads, 1)    # sample 1 bead at random
+```
+
+## Experiment
+
+Use replicate to do a large number of draws
+
+```{r beads-draw-replicate}
+B <- 1000000    # number of times to draw 1 bead
+events <- replicate(B, sample(beads, 1))    # draw 1 bead, B times
+tab <- table(events)    # make a table of outcome counts
+tab    # view count table
+prop.table(tab)    # view table of outcome proportions
+```
+
+
+You can use sample funtion to pick more than one element
+
+```{r-sample}
+sample(beads,2)
+sample(beads,2)
+sample(beads,2)
+sample(beads,6)
+```
+
+6 Gives an error because there are only 5 beads. Default is replace=FALSE. Use replace=TRUE to simulate pick with replace. 
+Note : this is much faster than replicate
+```{r beads-draw-sample}
+events <- sample(beads,replace = TRUE,B)  
+tab<-table(events)
+tab    # view count table
+prop.table(tab)    # view table of outcome proportions
+```
+
