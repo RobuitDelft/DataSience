@@ -16,6 +16,3 @@
 7. Linear Regression
 8. Machine Learning
 9. Capstone
-
-
-test
